@@ -10,3 +10,16 @@ spec:
   resources:
     requests:
       storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mytestpvc2
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "ibmc-vpc-block-10iops-tier"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
